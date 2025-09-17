@@ -57,6 +57,9 @@ Install & Run
 
 bash
 git clone https://github.com/augustsek02/ioin-main.git
+
 cd ioin-main
+
 npm install
+
 npm run dev
