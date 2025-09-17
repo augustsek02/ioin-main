@@ -7,7 +7,6 @@ IOIN is a purpose-built integration middleware platform designed for security, m
 
 Built with React, Vite, Framer Motion, and Tailwind CSS, IOIN features:
 
-- Dynamic theming (Noir Aurora, City Grid, Neo-Industrial)
 - Fully responsive design with mobile hamburger navigation
 - Smooth scrollspy navigation & route anchoring
 - Animated SVG data flow visualizations
