@@ -1,7 +1,7 @@
 IOIN — Intelligent Operations Integration Network
 
-> Middleware for the Real World  
-> Connect. Orchestrate. Detect. Assure.
+- Middleware for the Real World  
+- Connect. Orchestrate. Detect. Assure.
 
 IOIN is a purpose-built integration middleware platform designed for security, mobility, and civic operations connecting systems like Genetec, EasyPark, and Avigilon with retry-safe pipelines, policy-ready deploys, and agentic workflows.
 
