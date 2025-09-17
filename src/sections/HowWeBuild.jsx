@@ -34,8 +34,7 @@ export default function SectionHowWeBuild() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
         variants={containerStagger}
-      >
-        {/* Header */}
+      >     
         <motion.div className="text-center mb-16" variants={fadeInUp}>
           <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
             How We Build
@@ -45,12 +44,11 @@ export default function SectionHowWeBuild() {
           </p>         
         </motion.div>      
 
-        <div className="relative">        
-          {/* Vertical timeline line */}
+        <div className="relative">                
           <motion.div 
             className="absolute left-1/2 w-1 bg-gradient-to-b from-blue-200 to-indigo-200 transform -translate-x-1/2 hidden md:block"
             initial={{ top: "40px", height: 0 }}
-            whileInView={{ height: "calc(100% - 120px)" }} // leave padding above first & below last
+            whileInView={{ height: "calc(100% - 120px)" }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           />                
@@ -64,8 +62,7 @@ export default function SectionHowWeBuild() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-              >            
-                {/* Step Card */}
+              >                           
                 <motion.div 
                   className={`w-full md:w-5/12 mb-6 md:mb-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}
                   whileHover={{ y: -5 }}
@@ -94,9 +91,7 @@ export default function SectionHowWeBuild() {
                       {step.desc}
                     </motion.p>
                   </div>
-                </motion.div>                             
-
-                {/* Step Number */}
+                </motion.div>                                            
                 <div className="flex justify-center w-full md:w-2/12 order-first md:order-none">
                   <motion.div 
                     className="relative"
@@ -115,9 +110,7 @@ export default function SectionHowWeBuild() {
                       transition={{ delay: i * 0.15 + 0.4, duration: 2, repeat: Infinity }}
                     />
                   </motion.div>
-                </div>
-
-                {/* Empty spacer for alignment */}
+                </div>               
                 <div className="w-full md:w-5/12 hidden md:block"></div>
               </motion.div>
             ))}

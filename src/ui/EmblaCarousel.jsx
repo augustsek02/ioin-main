@@ -1,4 +1,3 @@
-// EmblaCarousel.jsx
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -62,8 +61,6 @@ export default function EmblaCarousel({ slides = [], options = { loop: false, al
           ))}
         </div>
       </div>
-
-      {/* Dots navigation */}
       <div className="embla-dots mt-3 flex gap-2 justify-center" role="tablist" aria-label="Slide selector">
         {slides.map((_, i) => (
           <button

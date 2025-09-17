@@ -51,9 +51,9 @@ function EnhancedIOINVisualization() {
   const LAYER_HEIGHT = 80;
 
   const pathData = [
-    "M110,380 Q200,340 280,320 Q360,300 450,300 Q550,300 650,240", // Genetec → API Gateway
-    "M110,300 Q200,280 280,280 Q380,280 450,300 Q550,320 650,280", // EasyPark → Rules Engine
-    "M110,220 Q200,200 280,220 Q380,240 450,300 Q550,360 650,320", // Avigilon → Observability
+    "M110,380 Q200,340 280,320 Q360,300 450,300 Q550,300 650,240", 
+    "M110,300 Q200,280 280,280 Q380,280 450,300 Q550,320 650,280", 
+    "M110,220 Q200,200 280,220 Q380,240 450,300 Q550,360 650,320", 
   ];
 
   const inputEndpoints = [
@@ -120,7 +120,7 @@ function EnhancedIOINVisualization() {
         </defs>
         <rect x="0" y="0" width="800" height="600" fill="transparent" />
         
-        {/* Middleware Layers */}
+
         {layers.map((layer, idx) => {
           const translateY = idx * LAYER_HEIGHT - (LAYER_HEIGHT * (layers.length - 1)) / 2;
           const baseY = STACK_Y + translateY;
@@ -181,7 +181,6 @@ function EnhancedIOINVisualization() {
           );
         })}
 
-        {/* Animated Paths */}
         {pathData.map((_, i) => {
           const layer = layers[i];
           return (
@@ -207,28 +206,23 @@ function EnhancedIOINVisualization() {
           );
         })}
 
-        {/* Animated Data Packets — NOW ALL GLOWING & COLORED */}
+       
         {pathData.map((_, i) => {
           const layer = layers[i];
           const packetSpeed = 8 - i;
 
           return (
-            <g key={`packet-group-${i}`}>
-              {/* Outer glow halo */}
+            <g key={`packet-group-${i}`}>           
               <circle r="10" fill={`url(#${layer.gradient})`} opacity="0.15" filter="url(#glow-soft)">
                 <animateMotion dur={`${packetSpeed}s`} repeatCount="indefinite" rotate="auto" begin={`${i * 0.7}s`}>
                   <mpath xlinkHref={`#p${i + 1}`} />
                 </animateMotion>
-              </circle>
-
-              {/* Main glowing orb */}
+              </circle>            
               <circle r="6" fill={`url(#${layer.gradient})`} filter="url(#glow-strong)">
                 <animateMotion dur={`${packetSpeed}s`} repeatCount="indefinite" rotate="auto" begin={`${i * 0.7}s`}>
                   <mpath xlinkHref={`#p${i + 1}`} />
                 </animateMotion>
               </circle>
-
-              {/* Inner core — now glowing & colored for ALL packets */}
               <circle
                 r="2.5"
                 fill={`url(#${layer.gradient})`}
@@ -242,8 +236,6 @@ function EnhancedIOINVisualization() {
             </g>
           );
         })}
-
-        {/* Input Endpoints */}
         {inputEndpoints.map((endpoint) => (
           <g key={endpoint.id} transform={`translate(${endpoint.x}, ${endpoint.y})`}>
             <rect x="-45" y="-18" width="90" height="36" rx="8" fill="rgba(255,255,255,0.8)" stroke={endpoint.color} strokeWidth="2" filter="url(#glow-soft)">
@@ -258,8 +250,6 @@ function EnhancedIOINVisualization() {
             <title>{`${endpoint.label}: Connected IoT Device`}</title>
           </g>
         ))}
-
-        {/* Output Endpoints */}
         {outputEndpoints.map((endpoint) => (
           <g key={endpoint.id} transform={`translate(${endpoint.x}, ${endpoint.y})`}>
             <rect x="-55" y="-18" width="110" height="36" rx="8" fill="rgba(255,255,255,0.8)" stroke={endpoint.color} strokeWidth="2" filter="url(#glow-soft)">

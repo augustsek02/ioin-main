@@ -108,14 +108,6 @@ export default function SectionHero() {
           className="space-y-6"
         >
           
-          <motion.p
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-white/80 backdrop-blur"
-            variants={fadeInUp}
-          >
-            
-          </motion.p>
-          
-          
           <motion.h1
             className="text-balance text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white mx-auto"
             variants={fadeInUp}

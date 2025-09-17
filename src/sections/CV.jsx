@@ -11,8 +11,6 @@ import {
   CheckCircle, 
   AlertCircle
 } from 'lucide-react'
-
-// ----- Card Components -----
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl hover:bg-white/10 transition-all duration-300 ${className}`}>
     {children}
@@ -47,8 +45,6 @@ const Progress = ({ value, className = "" }) => (
     />
   </div>
 )
-
-// ----- Workflow Visualization -----
 const WorkflowVisualization = () => {
   const [activeStep, setActiveStep] = useState(0)
   const workflowSteps = [
@@ -113,8 +109,6 @@ const WorkflowVisualization = () => {
     </Card>
   )
 }
-
-// ----- OCR Section -----
 const OCRSection = () => (
   <Card className="h-full flex flex-col">
     <CardHeader>
@@ -144,8 +138,6 @@ const OCRSection = () => (
     </CardContent>
   </Card>
 )
-
-// ----- Fuzzy Matching Section -----
 const FuzzyMatchingSection = () => {
   const [activeResult, setActiveResult] = useState(0)
   const ocrResults = [
@@ -192,8 +184,6 @@ const FuzzyMatchingSection = () => {
     </Card>
   )
 }
-
-// ----- Performance Metrics -----
 const PerformanceMetrics = () => (
   <Card className="h-full">
     <CardHeader>
@@ -223,8 +213,6 @@ const PerformanceMetrics = () => (
     </CardContent>
   </Card>
 )
-
-// ----- Main Section -----
 export default function SectionCV() {
   return (
     <section id="cv" className="relative min-h-screen bg-noir-800 text-white flex items-center justify-center overflow-hidden py-20" style={{ contentVisibility: 'auto', containIntrinsicSize: '700px 500px' }} aria-label="Computer Vision">
@@ -236,23 +224,15 @@ export default function SectionCV() {
           <motion.p className="text-white/70 max-w-2xl mx-auto" variants={fadeInUp}>
             Advanced OCR and fuzzy matching system for automated license plate recognition with intelligent error correction
           </motion.p>
-        </motion.div>
-
-        {/* Cards Section */}
-        <motion.div className="flex flex-col w-full space-y-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerStagger}>
-          
-          {/* Workflow - Full Width */}
+        </motion.div>      
+        <motion.div className="flex flex-col w-full space-y-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerStagger}> 
           <motion.div className="w-full max-w-4xl mx-auto" variants={fadeInUp}>
             <WorkflowVisualization />
-          </motion.div>
-
-          {/* OCR & Fuzzy Side by Side */}
+          </motion.div>        
           <motion.div className="flex flex-col lg:flex-row w-full max-w-4xl mx-auto gap-4" variants={fadeInUp}>
             <div className="flex-1"><OCRSection /></div>
             <div className="flex-1"><FuzzyMatchingSection /></div>
-          </motion.div>
-
-          {/* Performance Metrics - Full Width */}
+          </motion.div>          
           <motion.div className="w-full max-w-4xl mx-auto" variants={fadeInUp}>
             <PerformanceMetrics />
           </motion.div>

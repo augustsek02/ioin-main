@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base document defaults */
+
 :root { color-scheme: light dark }
 html, body, #root { height: 100% }
 body { @apply bg-noir-900 text-white antialiased } 
 
-/* Theme tokens */
+
 :root[data-theme='noir'] {
   --page-bg: theme(colors.noir.900);
   --page-fg: white;
@@ -30,29 +30,19 @@ body { @apply bg-noir-900 text-white antialiased }
   --tone-light: white;
 }
 
-/* Apply theme tokens */
+
 body { background-color: var(--page-bg); color: var(--page-fg) }
-
-/* Section snapping */
-/* Optional snap can fight sticky headers; disable to improve centering */
-/* main { scroll-snap-type: y proximity }
-section { scroll-snap-align: start } */
-
-/* Reveal animation using clip-path (visible by default for robustness) */
 .reveal { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0 round 8px) }
 .reveal-visible { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0 round 8px); transition: opacity .6s ease, transform .6s ease, clip-path .8s ease }
 
-/* Smooth anchor scroll for hash links */
 html { scroll-behavior: smooth }
 
-/* Ensure anchored sections account for sticky header */
 section { scroll-margin-top: 72px }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important }
 }
 
-/* Lightweight animated background (CSS-only, GPU-friendly) */
 @keyframes pan-bg {
   0% { background-position: 0% 0%, 100% 0%, 50% 100%; }
   50% { background-position: 50% 50%, 50% 50%, 50% 50%; }
@@ -69,7 +59,6 @@ section { scroll-margin-top: 72px }
   animation: pan-bg 16s ease-in-out infinite;
 }
 
-/* Presets tuned for dark vs light sections */
 .section-anim-dark {
   background-image:
     radial-gradient(900px 450px at 10% -10%, rgba(59,130,246,0.18), transparent),
@@ -83,7 +72,6 @@ section { scroll-margin-top: 72px }
     radial-gradient(600px 300px at 50% 120%, rgba(16,185,129,0.14), transparent);
 }
 
-/* Floating color blobs for visible, lightweight motion */
 @keyframes drift-1 { 0% { transform: translate(-10%, -10%) scale(1); } 50% { transform: translate(10%, 5%) scale(1.1); } 100% { transform: translate(-5%, 10%) scale(1); } }
 @keyframes drift-2 { 0% { transform: translate(5%, -15%) scale(1); } 50% { transform: translate(-10%, 0%) scale(0.95); } 100% { transform: translate(8%, 12%) scale(1); } }
 @keyframes drift-3 { 0% { transform: translate(-5%, 5%) scale(1); } 50% { transform: translate(12%, -8%) scale(1.05); } 100% { transform: translate(-10%, 6%) scale(1); } }
@@ -94,7 +82,6 @@ section { scroll-margin-top: 72px }
 .section-blob.blob-2 { width: 36rem; height: 36rem; right: -8%; top: -15%; animation: drift-2 28s ease-in-out infinite alternate; }
 .section-blob.blob-3 { width: 44rem; height: 44rem; left: 10%; bottom: -18%; animation: drift-3 26s ease-in-out infinite alternate; }
 
-/* Color presets for blobs */
 .section-anim-dark .blob-1 { background: rgba(99,102,241,0.55); }
 .section-anim-dark .blob-2 { background: rgba(56,189,248,0.55); }
 .section-anim-dark .blob-3 { background: rgba(34,197,94,0.45); }

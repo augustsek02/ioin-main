@@ -19,10 +19,8 @@ export function mountReveals() {
     { rootMargin: '0px 0px -10% 0px', threshold: 0.2 },
   )
 
-  // Observe current elements
+  
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
-
-  // Observe future elements (for lazy-loaded sections/routes)
   const mo = new MutationObserver((mutations) => {
     for (const m of mutations) {
       m.addedNodes.forEach((node) => {

@@ -24,9 +24,9 @@ export default function SectionAgentic() {
   const getCardClasses = (feature) => {
     switch (feature.size) {
       case 'large':
-        return 'md:col-span-2 md:row-span-1' // large card width = 2 small cards
+        return 'md:col-span-2 md:row-span-1'
       case 'small':
-        return 'md:col-span-1 md:row-span-1' // each small card takes 1 column
+        return 'md:col-span-1 md:row-span-1' 
       default:
         return 'md:col-span-1 md:row-span-1'
     }
@@ -48,7 +48,7 @@ export default function SectionAgentic() {
         viewport={{ once: true, amount: 0.2 }}
         variants={containerStagger}
       >
-        {/* Header */}
+       
         <motion.div className="mb-16" variants={fadeInUp}>
           <h2 className="mb-4 text-3xl font-semibold tracking-tight md:text-4xl">
             AI & Agentic Systems
@@ -59,7 +59,7 @@ export default function SectionAgentic() {
         
         </motion.div>
 
-        {/* Bento Grid */}
+        
         <motion.div className="flex justify-center" variants={containerStagger}>
           <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-3 max-w-2xl auto-rows-auto">
             {features.map((feature, i) => (

@@ -5,8 +5,7 @@ export default function ClipReveal({ children, className = '' }) {
   const [root, setRoot] = useState(null);
 
   useEffect(() => {
-    // Use the scroll container as the root for in-view detection so animations
-    // fire when scrolling inside the app's main element (overflow:auto).
+    
     const el = document.getElementById('page-scroll');
     if (el) setRoot(el);
   }, []);

@@ -9,15 +9,16 @@ export default {
       colors: {
         noir: {
           50: '#f4f7fb',
-          900: '#0b0f14',
-          800: '#101620',
           700: '#16202c',
+          800: '#1a1a1a', 
+          900: '#0a0a0a',  
         },
         aurora: {
           500: '#7dd3fc',
           600: '#60a5fa',
           700: '#34d399',
         },
+        
       },
       animation: {
         'fade-in': 'fade-in 600ms ease-out both',
@@ -35,8 +36,9 @@ export default {
       },
     },
   },
+  safelist: [
+    'bg-noir-900', 'bg-noir-800', 'bg-white',
+    'text-white', 'text-noir-900',
+  ],
   plugins: [],
 }
-
-
-

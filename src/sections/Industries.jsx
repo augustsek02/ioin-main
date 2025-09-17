@@ -94,8 +94,6 @@ export default function SectionIndustries() {
           Specialized solutions for complex integration challenges across sectors
           engineered for compliance, scale, and real-world resilience.
         </motion.p>
-
-        {/* Cards Grid */}
         <motion.div
           className="grid gap-3 md:grid-cols-2 w-full max-w-5xl mb-16"
           variants={containerStagger}
@@ -171,8 +169,6 @@ export default function SectionIndustries() {
             </motion.article>
           ))}
         </motion.div>
-
-        {/* Chips */}
         <motion.div
           className="flex flex-wrap justify-center gap-3"
           variants={fadeInUp}
@@ -192,8 +188,7 @@ export default function SectionIndustries() {
         <div className="absolute -z-10 top-1/4 left-10 w-20 h-20 bg-emerald-500/5 rounded-full blur-xl animate-blob"></div>
         <div className="absolute -z-10 bottom-1/4 right-10 w-32 h-32 bg-blue-500/5 rounded-full blur-xl animate-blob animation-delay-2000"></div>
       </motion.div>
-
-      <style jsx>{`
+      <style>{`
         .animate-blob {
           animation: blob 7s infinite;
         }

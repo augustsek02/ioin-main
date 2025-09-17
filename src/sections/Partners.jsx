@@ -54,7 +54,6 @@ export default function SectionPartners() {
           variants={fadeInUp}
         >
           Seamlessly interoperable with Genetec and EasyPark, with Avigilon integration in progress. Support additional vendors via API connectors to standard interfaces or Vendor SDKs.
-
         </motion.p>
 
         <div
@@ -92,10 +91,9 @@ export default function SectionPartners() {
             ))}
           </div>
         </div>
-
-        
       </motion.div>
-      <style jsx>{`
+
+      <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
